@@ -4,7 +4,9 @@ services:
   pg:
     build: .
     volumes:
-      - .:/tmp/pagila-hw
+      #  - .:/tmp/pagila-hw
+      - ./sql:/tmp/pagila-hw/sql
+      - ./run_tests.sh:/tmp/pagila-hw/run_tests.sh:ro
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=pass
